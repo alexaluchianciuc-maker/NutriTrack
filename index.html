@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F9E1E6">
+    <meta name="description" content="NutriTrack — your personal nutrition and wellness journal.">
+
+    <title>NutriTrack | Nutrition & Wellness Journal</title>
+
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-mark">AL</div>
+                <div class="brand-text">
+                    <h1>NutriTrack</h1>
+                    <p>Nutrition & Wellness</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <p class="nav-heading">MENU</p>
+
+                <button class="nav-link active" data-section="dashboard">
+                    <span class="nav-icon">⌂</span>
+                    Dashboard
+                </button>
+
+                <button class="nav-link" data-section="food-diary">
+                    <span class="nav-icon">♡</span>
+                    Food Diary
+                </button>
+
+                <button class="nav-link" data-section="analytics">
+                    <span class="nav-icon">▥</span>
+                    Nutrition Analytics
+                </button>
+
+                <p class="nav-heading">WELLNESS</p>
+
+                <button class="nav-link" data-section="water">
+                    <span class="nav-icon">♧</span>
+                    Water Tracker
+                </button>
+
+                <button class="nav-link" data-section="weight">
+                    <span class="nav-icon">⌁</span>
+                    Weight Tracker
+                </button>
+
+                <button class="nav-link" data-section="insights">
+                    <span class="nav-icon">✧</span>
+                    Weekly Insights
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Your wellness journey, one day at a time.</p>
+                <span>NutriTrack © 2026</span>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL WELLNESS SPACE</p>
+                    <p id="current-date" class="current-date"></p>
+                </div>
+
+                <div class="header-profile">
+                    <div class="profile-avatar">AL</div>
+                </div>
+            </header>
+
+
+            <!-- Dashboard -->
+            <section class="page-section active" id="dashboard">
+                <div class="welcome-section">
+                    <div>
+                        <p class="eyebrow">A LITTLE PROGRESS EVERY DAY</p>
+                        <h2>Welcome to your wellness journal</h2>
+                        <p>Take a moment to check in with yourself today.</p>
+                    </div>
+                    <div class="welcome-decoration">♡</div>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Today's Overview</h2>
+                        <p>A gentle look at your daily habits.</p>
+                    </div>
+                </div>
+
+<div class="dashboard-grid">
+    <article class="overview-card food-overview">
+        <div class="overview-card-top">
+            <span class="card-icon">♡</span>
+            <span class="overview-tag">DAILY JOURNAL</span>
+        </div>
+        <p class="card-label">Food Entries</p>
+        <h3 id="dashboard-food-count">0</h3>
+        <p class="card-description">Foods recorded today</p>
+    </article>
+
+    <article class="overview-card water-overview">
+        <div class="overview-card-top">
+            <span class="card-icon">♧</span>
+            <span class="overview-tag">HYDRATION</span>
+        </div>
+        <p class="card-label">Water Intake</p>
+        <h3 id="dashboard-water">0 ml</h3>
+        <p class="card-description">Water recorded today</p>
+    </article>
+
+    <article class="overview-card weight-overview">
+        <div class="overview-card-top">
+            <span class="card-icon">✧</span>
+            <span class="overview-tag">PERSONAL LOG</span>
+        </div>
+        <p class="card-label">Recorded Weight</p>
+        <h3 id="dashboard-weight">—</h3>
+        <p class="card-description">Latest recorded entry</p>
+    </article>
+</div>
+                <div class="dashboard-lower-grid">
+                    <article class="content-card">
+                        <div class="section-heading">
+                            <div>
+                                <h2>Daily Nutrition</h2>
+                                <p>Your recorded nutrition for today.</p>
+                            </div>
+                        </div>
+
+<div class="dashboard-nutrition">
+    <div class="nutrition-calories">
+        <span>Total Calories</span>
+        <strong id="dashboard-calories">0 kcal</strong>
+        <small>Recorded today</small>
+    </div>
+
+    <div class="nutrition-macro">
+        <span>Protein</span>
+        <strong id="dashboard-protein">0 g</strong>
+    </div>
+
+    <div class="nutrition-macro">
+        <span>Fat</span>
+        <strong id="dashboard-fat">0 g</strong>
+    </div>
+
+    <div class="nutrition-macro">
+        <span>Carbohydrates</span>
+        <strong id="dashboard-carbs">0 g</strong>
+    </div>
+</div>
+                    </article>
+
+                    <article class="content-card daily-note">
+                        <span class="card-icon">♡</span>
+                        <h3>A gentle reminder</h3>
+                        <p>Wellness is not about perfection. Every small step counts.</p>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- Food Diary -->
+            <section class="page-section" id="food-diary">
+                <div class="page-intro">
+                    <p class="eyebrow">YOUR DAILY FOOD JOURNAL</p>
+                    <h2>Food Diary</h2>
+                    <p>Search for foods and keep track of your daily nutrition.</p>
+                </div>
+
+                <article class="content-card diary-card">
+                    <div class="diary-date">
+                        <label for="diary-date">Select date</label>
+                        <input type="date" id="diary-date">
+                    </div>
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Add food</h2>
+                            <p>Search the food database to find a product.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-form">
+                        <input
+                            type="text"
+                            id="food-search"
+                            placeholder="Search food in English..."
+                            autocomplete="off"
+                        >
+                        <button id="search-food" type="button">Search</button>
+                    </div>
+
+                    <div id="search-results" aria-live="polite"></div>
+
+                    <div class="food-form add-food-form">
+                        <input
+                            type="number"
+                            id="food-grams"
+                            placeholder="Amount in grams"
+                            min="1"
+                            step="1"
+                        >
+                        <button id="add-food" type="button">Add Food</button>
+                    </div>
+                </article>
+
+                <article class="content-card diary-entries-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Food Entries</h2>
+                            <p>Your recorded foods for the selected date.</p>
+                        </div>
+                    </div>
+
+                    <div id="food-list" aria-live="polite">
+                        <p class="empty-state">No food entries for this date yet.</p>
+                    </div>
+                </article>
+
+                <section class="nutrition-summary">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Daily Nutrition Summary</h2>
+                            <p>A breakdown of your recorded food intake.</p>
+                        </div>
+                    </div>
+
+                    <article class="calories-card">
+                        <p>Total Calories</p>
+                        <h3 id="total-calories">0 kcal</h3>
+                        <span>Recorded for the selected day</span>
+                    </article>
+
+                    <div class="macros-grid">
+                        <article class="macro-card">
+                            <h3 id="total-protein">0 g</h3>
+                            <p>Protein</p>
+                        </article>
+
+                        <article class="macro-card">
+                            <h3 id="total-fat">0 g</h3>
+                            <p>Fat</p>
+                        </article>
+
+                        <article class="macro-card">
+                            <h3 id="total-carbs">0 g</h3>
+                            <p>Carbohydrates</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+
+            <!-- Nutrition Analytics -->
+            <section class="page-section" id="analytics">
+                <div class="page-intro">
+                    <p class="eyebrow">UNDERSTAND YOUR FOOD HABITS</p>
+                    <h2>Nutrition Analytics</h2>
+                    <p>Explore patterns in the nutrition you have recorded.</p>
+                </div>
+
+                <article class="content-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Nutrition History</h2>
+                            <p>Your recorded daily nutrition over time.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="nutrition-chart"></canvas>
+                        <p id="nutrition-chart-empty" class="empty-state">
+                            Add food entries to see your nutrition history.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="content-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Macronutrient Overview</h2>
+                            <p>Protein, fat and carbohydrates from your food diary.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="macro-chart"></canvas>
+                        <p id="macro-chart-empty" class="empty-state">
+                            Your macro chart will appear when you record food.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+
+            <!-- Water Tracker -->
+            <section class="page-section" id="water">
+                <div class="page-intro">
+                    <p class="eyebrow">A MOMENT TO HYDRATE</p>
+                    <h2>Water Tracker</h2>
+                    <p>Keep a simple record of the water you drink.</p>
+                </div>
+
+                <article class="content-card water-card">
+                    <span class="large-card-icon">♧</span>
+                    <p class="card-label">Today's recorded water</p>
+                    <h3 id="water-total">0 ml</h3>
+
+                    <div class="water-progress-track">
+                        <div id="water-progress" class="water-progress"></div>
+                    </div>
+
+                    <p id="water-status" class="card-description">
+                        Start by recording a glass of water.
+                    </p>
+
+                    <div class="water-controls">
+                        <button class="secondary-button" data-water-amount="150" type="button">+150 ml</button>
+                        <button class="secondary-button" data-water-amount="250" type="button">+250 ml</button>
+                        <button class="secondary-button" data-water-amount="500" type="button">+500 ml</button>
+                    </div>
+
+                    <div class="custom-water-form">
+                        <label for="custom-water">Custom amount (ml)</label>
+                        <div class="food-form">
+                            <input type="number" id="custom-water" min="1" placeholder="Enter amount">
+                            <button id="add-water" type="button">Add Water</button>
+                        </div>
+                    </div>
+
+                    <button id="reset-water" class="text-button" type="button">
+                        Clear today's water entries
+                    </button>
+                </article>
+            </section>
+
+
+            <!-- Weight Tracker -->
+            <section class="page-section" id="weight">
+                <div class="page-intro">
+                    <p class="eyebrow">YOUR PERSONAL RECORDS</p>
+                    <h2>Weight Tracker</h2>
+                    <p>Keep a private history of the measurements you choose to record.</p>
+                </div>
+
+                <article class="content-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Add a weight entry</h2>
+                            <p>Recording is optional. There are no targets or judgments.</p>
+                        </div>
+                    </div>
+
+                    <div class="weight-form">
+                        <div>
+                            <label for="weight-date">Date</label>
+                            <input type="date" id="weight-date">
+                        </div>
+
+                        <div>
+                            <label for="weight-value">Weight (kg)</label>
+                            <input
+                                type="number"
+                                id="weight-value"
+                                min="0.1"
+                                max="500"
+                                step="0.1"
+                                placeholder="e.g. 60.5"
+                            >
+                        </div>
+
+                        <button id="add-weight" type="button">Save Entry</button>
+                    </div>
+                </article>
+
+                <article class="content-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Weight History</h2>
+                            <p>Your own recorded entries over time.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="weight-chart"></canvas>
+                        <p id="weight-chart-empty" class="empty-state">
+                            No weight entries recorded yet.
+                        </p>
+                    </div>
+
+                    <div id="weight-list"></div>
+                </article>
+            </section>
+
+
+            <!-- Weekly Insights -->
+            <section class="page-section" id="insights">
+                <div class="page-intro">
+                    <p class="eyebrow">LOOK BACK WITH KINDNESS</p>
+                    <h2>Weekly Insights</h2>
+                    <p>A summary of the habits and entries you have recorded this week.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <article class="overview-card">
+                        <span class="card-icon">♡</span>
+                        <p class="card-label">Days with food entries</p>
+                        <h3 id="insight-food-days">0</h3>
+                        <p class="card-description">Days recorded this week</p>
+                    </article>
+
+                    <article class="overview-card">
+                        <span class="card-icon">♧</span>
+                        <p class="card-label">Water entries</p>
+                        <h3 id="insight-water-days">0</h3>
+                        <p class="card-description">Days with recorded water</p>
+                    </article>
+
+                    <article class="overview-card">
+                        <span class="card-icon">✧</span>
+                        <p class="card-label">Food entries</p>
+                        <h3 id="insight-food-count">0</h3>
+                        <p class="card-description">Total entries this week</p>
+                    </article>
+                </div>
+
+                <article class="content-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Your Week at a Glance</h2>
+                            <p id="weekly-insight-text">
+                                Your weekly summary will appear as you record entries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="weekly-chart"></canvas>
+                        <p id="weekly-chart-empty" class="empty-state">
+                            Add entries during the week to see your activity.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <footer class="app-footer">
+                <p>NutriTrack — Your wellness journey, one day at a time.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/js/script.js"></script>
+
+</body>
+</html>
